@@ -1,4 +1,9 @@
 package com.udea.sitas.repository;
 
-public interface IScaleRepository {
+import com.udea.sitas.model.entities.Scale;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IScaleRepository extends JpaRepository<Scale, Long> {
 }
