@@ -16,6 +16,8 @@ services:
       - "5500:5500"
     tty: true
     privileged: true
+    volumes:
+      - ./init-scripts:/opt/oracle/scripts/setup
 
   api:
     build:
