@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -18,7 +16,7 @@ import lombok.Data;
 public class Scale implements java.io.Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "scale_id")
     private long id;
 
     @ManyToOne
@@ -26,15 +24,15 @@ public class Scale implements java.io.Serializable {
     private Flight flight;
 
     @ManyToOne
-    // @JoinColumn(name = "origin_airport_id", nullable = false)
+    @JoinColumn(name = "origin_airport", nullable = false)
     private Airport originAirport;
 
     @ManyToOne
-    // @JoinColumn(name = "destination_airport_id", nullable = false)
+    @JoinColumn(name = "destination_airport", nullable = false)
     private Airport destinationAirport;
 
     @ManyToOne
-    // @JoinColumn(name = "airplane_model_id", nullable = false)
+    @JoinColumn(name = "airplane_model", nullable = false)
     private AirplaneModel airplaneModel;
 
     @Column(name = "departure_date", nullable = false)

@@ -15,6 +15,7 @@ import java.util.Set;
 @Data
 public class Airport {
     @Id
+    @Column(name = "airport_code")
     private String id;
 
     @Column(name = "name")

@@ -16,6 +16,7 @@ import lombok.Data;
 public class AirplaneModel implements java.io.Serializable {
 
     @Id
+    @Column(name = "airplane_model")
     private String id;
 
     @Column(name = "family")
