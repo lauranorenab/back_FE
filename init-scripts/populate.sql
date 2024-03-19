@@ -1,3 +1,7 @@
+ALTER SESSION
+SET
+  CURRENT_SCHEMA = AIRLINE_ADMIN;
+
 INSERT INTO
   AirplaneModel (airplane_model, family, capacity, cargo_capacity)
 VALUES
@@ -36,3 +40,5 @@ VALUES
     'Colombia',
     3
   );
+
+COMMIT;
