@@ -3,10 +3,10 @@ version: "3"
 services:
   db:
     image: daniellujan/oracle-db:latest
-    container_name: sitas-oracle-db
+    container_name: sitas-db
     hostname: sitas-oracle-db
     environment:
-      ORACLE_SID: MYCDB
+      ORACLE_SID: AIRLINEDEV
       ORACLE_PDB: MYPDB
       ORACLE_PWD: oracle
       ORACLE_CHARACTERSET: AL32UTF8
@@ -23,13 +23,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: sitas-api
+    container_name: sitas-back
     hostname: sitas-api
     ports:
       - "8080:8080"
     depends_on:
       - db
     environment:
-      JDBC_URL: jdbc:oracle:thin:@db:1521:MYCDB
+      JDBC_URL: jdbc:oracle:thin:@db:1521:airlinedev
       JDBC_USER: AIRLINE_ADMIN
       JDBC_PASSWORD: SITAS

@@ -10,7 +10,7 @@ FROM amazoncorretto:21-alpine-jdk
 
 WORKDIR /app
 
-COPY --from=build /app/target/sitas-0.0.1-SNAPSHOT.jar /app/application.jar
+COPY --from=build /app/target/airline-api-0.0.1-SNAPSHOT.jar /app/application.jar
 
 EXPOSE 8080
 
